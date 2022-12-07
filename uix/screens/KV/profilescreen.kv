@@ -1,0 +1,229 @@
+#: import TitleLabel uix.useful.titlelabel
+
+<ProfileScreen>
+    body: profile_body
+    circle_id: circle1
+
+    MDFloatLayout:
+
+        Circle:
+            id: circle1
+            pos_hint: {"center_x": 1.33, "center_y": 1}
+
+        Circle:
+            pos_hint: {"center_x": .28, "center_y": 1.1}
+
+        MDLabel:
+            text: "Пеперомия в Горшке"
+            pos_hint: {"center_x": .5, "center_y": .825}
+            bold: True
+            halign: "center"
+            font_size: 24
+            theme_text_color: "Custom"
+            text_color: 139/255, 180/255, 112/255, 1
+
+        MDRaisedButton:
+            text: "Edit Profile"
+            md_bg_color: 72/255, 155/255, 104/255, 1
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            elevation: 0
+            pos_hint: {"center_x": .5, "center_y": .78}
+            size_hint: .2, .02
+            font_size: 14
+            on_press:
+                self.parent.parent.test()
+
+        Circle:
+            size_hint: .2, .1
+            pos_hint: {"center_x": .5, "center_y": .9}
+            FitImage:
+                radius: 200
+                source: "resources/source/plant_pot.png"
+
+        MDBoxLayout:
+            id: profile_body
+            orientation: "vertical"
+            size_hint: 1, .25
+            pos_hint: {"top": .7}
+
+            TitleLabel:
+                size_hint: 1, .2
+                text: "Profile info"
+
+            MDGridLayout:
+                id: info_container
+                rows: 4
+                cols: 2
+
+                NameLine:
+                    id: name
+                    text: "Name"
+
+                ContentLine:
+                    id: content
+                    text: "Djabrail"
+
+                NameLine:
+                    id: name
+                    text: "Email"
+
+                ContentLine:
+                    id: content
+                    text: "djabba2003@gmail.com"
+
+                NameLine:
+                    id: name
+                    text: "Phone Number"
+
+                ContentLine:
+                    id: content
+                    text: "7-938-123-45-67"
+
+                NameLine:
+                    id: name
+                    text: "Username"
+
+                ContentLine:
+                    id: content
+                    text: "Dja"
+
+
+
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: 1, .125
+            pos_hint: {"top": .45}
+
+            TitleLabel:
+                size_hint: 1, .8
+                text: "Content"
+
+            MDBoxLayout:
+                padding : [20, 0, 20, 10]
+
+                MDIcon:
+                    icon: "cards-heart-outline"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+                MDLabel:
+                    size_hint: .8, 1
+                    padding: 10, 0
+                    text: "Favourite"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+                MDIcon:
+                    icon: "chevron-right"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+            MDBoxLayout:
+                padding : [20, 0, 20, 10]
+
+                MDIcon:
+                    icon: "pot-outline"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+                MDLabel:
+                    size_hint: .8, 1
+                    padding: 10, 0
+                    text: "My pots"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+                MDIcon:
+                    icon: "chevron-right"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: 1, .125
+            pos_hint: {"top": .325}
+
+            TitleLabel:
+
+            MDBoxLayout:
+                padding : [20, 0, 20, 10]
+
+                MDIcon:
+                    icon: "translate"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+                MDLabel:
+                    size_hint: .8, 1
+                    padding: 10, 0
+                    text: "Language"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+                MDIcon:
+                    icon: "chevron-right"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+            MDBoxLayout:
+                padding : [20, 0, 20, 10]
+
+                MDIcon:
+                    icon: "power-sleep"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+
+                MDFloatLayout:
+
+                    LightButton:
+
+                    MDLabel:
+                        text: "   Lights"
+                        theme_text_color: "Custom"
+                        text_color: 72/255, 155/255, 104/255, 1
+                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                MDIcon:
+                    icon: "chevron-right"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+<InfoLine>
+    nameLabel: name
+    contentLabel: content
+
+    MDLabel:
+        id: name
+        text: "Name"
+
+    MDLabel:
+        id: content
+        text: "Content"
+
+<Circle@MDCard>
+    md_bg_color: 136/255, 177/255, 111/255, .2
+    radius: 800
+    size_hint: 1.5, .75
+
+<NameLine@MDLabel>
+    theme_text_color: "Custom"
+    text_color: 72/255, 155/255, 104/255, 1
+    padding: 10, 0
+    bold: True
+    font_size: 14
+
+<ContentLine@MDLabel>
+    theme_text_color: "Custom"
+    text_color: 139/255, 180/255, 112/255, 1
+    halign: "right"
+    padding: 10, 10
+    font_size: 14
+
+<LightButton>
+    pos_hint: {"center_x": .5, "center_y": .5}
+    size_hint_x: 1
+    on_press:
+        self.light_on()
+

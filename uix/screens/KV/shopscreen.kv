@@ -1,0 +1,140 @@
+<ShopScreen>
+    content_body: content_list
+    on_enter:
+   #     self.parent.initialize()
+   #     root.fill_content(root.content_body.body)
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDBoxLayout:
+            size_hint_y: .1
+
+            MDLabel:
+                text: "Pots for plants"
+                theme_text_color: "Custom"
+                text_color: 72/255, 155/255, 104/255, 1
+                bold: True
+                font_size: 32
+                padding: 15, 0
+
+            MDBoxLayout:
+                padding: [0, 0, 15, 5]
+                size_hint_x: .2
+                MDIconButton:
+                    icon: "bell-outline"
+                    icon_size: "32sp"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+
+        MDBoxLayout:
+            size_hint_y: .05
+
+            MDLabel:
+                text: "X products found"
+                theme_text_color: "Custom"
+                text_color: 153/255, 212/255, 115/255, 1
+                valign: "center"
+                padding: 15, 0
+
+            MDBoxLayout:
+                size_hint_x: .3
+                padding: [15, 0, 15 ,7]
+
+                MDIconButton:
+                    size_hint: .5, .7
+                    icon: "plus"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+                    no_ripple_effect: True
+                    on_press:
+                        root.test()
+
+                MDIconButton:
+                    size_hint: .5, .7
+                    icon: "filter-outline"
+                    theme_text_color: "Custom"
+                    text_color: 72/255, 155/255, 104/255, 1
+                    on_press:
+                        root.fill_content(root.content_body.body)
+        ScrollView:
+            id: content_list
+            body: content_grid
+            do_scroll_y: True
+            do_scroll_x: False
+            size_hint: 1, 1
+
+            MDGridLayout:
+                id: content_grid
+                cols: 2
+                spacing: 15
+                padding: [20, 20, 20, 20]
+                adaptive_height: True
+
+                Cell:
+
+                Cell:
+
+<Cell>
+    orientation: "vertical"
+    radius: 15
+    md_bg_color: 129/255, 208/255, 102/255, 0.6
+    size_hint_y: None
+    height: 200
+
+    MDCard:
+        md_bg_color: 129/255, 208/255, 102/255, 0.01
+
+        FitImage:
+            radius: 15
+            pos_hint: {"center_x": .5}
+            source: "resources/source/eclipse.png"
+
+    MDBoxLayout:
+        size_hint_y: .3
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: [10, 8, 0, 12]
+
+            MDLabel:
+                text: "Indoor"
+                bold: True
+                theme_text_color: "Custom"
+                text_color: 52/255, 73/255, 58/255, .8
+
+            MDLabel:
+                text: "Plant Jasmeen"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 52/255, 73/255, 58/255, .8
+
+        MDBoxLayout:
+            size_hint_x: .35
+            orientation: "vertical"
+
+            MDCard:
+                radius: 10
+                md_bg_color: 21/255, 190/255, 98/255, .6
+                size_hint_x: .85
+
+                MDLabel:
+                    text: "$30"
+                    font_size: 14
+                    halign: "center"
+                    theme_text_color: "Custom"
+                    text_color: "white"
+
+            MDBoxLayout:
+
+                MDIcon:
+                    icon: "star"
+                    theme_text_color: "Custom"
+                    text_color: 255/255, 193/255, 7/255, 1
+                    font_size: dp(12)
+                    pos_hint: {"center_y": .5}
+
+                MDLabel:
+                    text: "5.0"
+                    font_size: 12
+                    theme_text_color: "Custom"
+                    text_color: 52/255, 73/255, 58/255, .8

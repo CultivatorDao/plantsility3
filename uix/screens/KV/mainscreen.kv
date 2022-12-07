@@ -1,0 +1,33 @@
+#: import ProfileScreen uix.screens.baseclass.profilescreen
+#: import ShopScreen uix.screens.baseclass.shopscreen
+#: import ScannerScreen uix.screens.baseclass.scannerscreen
+#: import HomeScreen uix.screens.baseclass.homescreen
+
+
+
+<MainScreen>
+    #panel_color: "#eeeaea"
+    selected_color_background: "orange"
+    text_color_active: 0, 100/255, 0, 1
+    text_color_normal: 173/255, 210/255, 188/255, 1
+    elevation: 10
+
+    HomeScreen:
+        name: 'screen 1'
+        text: 'Main'
+        icon: "home-outline"  #'resources/source/home_icon_normal.png'
+
+    ScannerScreen:
+        name: 'screen 2'
+        text: 'Scanner'
+        icon: 'line-scan' #crop-free camera-outline
+
+    ShopScreen:
+        name: 'screen 3'
+        text: 'Shop'
+        icon: 'cart-outline'  #briefcase-outline
+
+    ProfileScreen:
+        name: 'screen 4'
+        text: 'Profile'
+        icon: 'account-circle'
